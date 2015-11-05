@@ -28,11 +28,44 @@ auto doReadInput(const string & Filename)
 	return input;
 }
 
+auto doCheckRowForRuleViolations(const vector<char> & Row)
+{
+	int numberOfOnes=0;
+
+	int numberOfZeros=0;
+
+	int i;
+
+	for(i=0;i<Row.size();++i)
+	{
+
+	}
+}
+
+auto doCheckColumnForRuleViolations(const vector<char> & Column)
+{
+	int numberOfOnes=0;
+
+	int numberOfZeros=0;
+
+	int i;
+
+	for(i=0;i<Column.size();++i)
+	{
+
+	}
+}
+
+auto doCheckPuzzleForRuleViolations(const vector<vector<char>> & Board)
+{
+
+}
+
 auto doPuzzle(const vector<vector<char>> & Board, int BoardSize)
 {
 	/*
 	Rules for the logic puzzle:
-	You can't put more than two identical numbers next to each other in a line (i.e. you can't have a "111" or "000").
+	You can't put more than two identical numbers next to each other in a row (i.e. you can't have a "111" or "000").
 	The number of 1s and 0s on each row and column must match.
 	You can't have two identical rows or columns.
 	You can have three of the same color diagonally

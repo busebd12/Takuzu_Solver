@@ -4,64 +4,36 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include "PuzzleBoard.h"
 using namespace std;
 
-auto doReadInput(const string & Filename)
+auto doCheckRowForRuleViolations()
 {
-	ifstream file;
-
-	file.open(Filename.c_str());
-
-	vector<vector<char>> input;
-
-	string line;
-
-	while(file >> line)
-	{
-		vector<char> temp;
-
-		move(line.begin(), line.end(), back_inserter(temp));
-
-		input.emplace_back(temp);
-	}
-
-	return input;
+	
 }
 
-auto doCheckRowForRuleViolations(const vector<char> & Row)
+auto doCheckColumnForRuleViolations()
 {
-	int numberOfOnes=0;
-
-	int numberOfZeros=0;
-
-	int i;
-
-	for(i=0;i<Row.size();++i)
-	{
-
-	}
+	
 }
 
-auto doCheckColumnForRuleViolations(const vector<char> & Column)
-{
-	int numberOfOnes=0;
-
-	int numberOfZeros=0;
-
-	int i;
-
-	for(i=0;i<Column.size();++i)
-	{
-
-	}
-}
-
-auto doCheckPuzzleForRuleViolations(const vector<vector<char>> & Board)
+auto doCheckPuzzleForRuleViolations()
 {
 
 }
 
-auto doPuzzle(const vector<vector<char>> & Board, int BoardSize)
+auto doCreateRowCollection()
+{
+	
+}
+
+auto doCreateColumnCollection()
+{
+	
+	
+}
+
+auto doPuzzle()
 {
 	/*
 	Rules for the logic puzzle:
@@ -75,52 +47,18 @@ auto doPuzzle(const vector<vector<char>> & Board, int BoardSize)
 
 	int numberOfOnes=0;
 
-	cout << "The size of the board is: " << BoardSize << endl;
+	//cout << "The size of the board is: " << BoardSize << endl;
+
+
 
 
 
 }
-
-auto printBoard(const vector<vector<char>> & Board)
-{
-	//for_each(Board.cbegin(), Board.cend(), [] (const auto & v) { copy(v.cbegin(), v.cend(), ostream_iterator<string>(cout, " "));});
-	int i;
-
-	int j;
-
-	for(i=0;i<Board.size();++i)
-	{
-		for(j=0;j<Board[i].size();++j)
-		{
-			cout << Board[i][j] << " ";
-		}
-		cout << endl;
-	}
-}
-
-auto getBoardSize(const vector<vector<char>> & Board)
-{
-	size_t size=0;
-
-	int i;
-
-	for(i=0;i<Board.size();++i)
-	{
-		size+=Board[i].size();
-	}
-
-	return size;
-}
-
 int main()
 {
-	vector<vector<char>> board=doReadInput("./input.txt");
+	PuzzleBoard<char> puzzleBoard;
 
-	printBoard(board);
+	puzzleBoard.fillPuzzleBoard("./input.txt");
 
-	auto boardSize=getBoardSize(board);
-
-	cout << endl;
-
-	doPuzzle(board, boardSize);
+	puzzleBoard.print();
 }

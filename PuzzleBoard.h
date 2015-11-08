@@ -19,6 +19,7 @@ class PuzzleBoard
 		void fillPuzzleBoard(const std::string & Filename);
 		void print() const;
 		int getSize() const;
+		std::vector<std::vector<T>> getBoard() const;
 };
 
 //include the implementation file to avoid linker errors associated with templated classes

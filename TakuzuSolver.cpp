@@ -34,8 +34,49 @@ auto createRowCollection(PuzzleBoard<T> Board)
 template <typename T>
 auto createColumnCollection(PuzzleBoard<T> Board)
 {
-	
-	
+	vector<vector<char>> columns;
+
+	int rowCount=0;
+
+	int count=0;
+
+	int rowLength=Board.getBoard()[0].size();
+
+	do
+	{	
+		vector<char> temp;
+
+		/*
+		Loop through the board and put all the elements that makes up the each column
+		in a vector and put that vector in a vector of vectors that represents all the columns of the board
+		*/
+		for(int i=0;i<rowLength;++i)
+		{
+			temp.emplace_back(Board.getBoard()[i][rowCount]);
+		}
+
+		columns.emplace_back(temp);
+
+		temp.clear();
+
+		rowCount++;
+
+		count+=4;
+	}
+	while(count!=Board.getSize());
+
+	int x;
+
+	int y;
+
+	for(x=0;x<columns.size();++x)
+	{
+		for(y=0;y<columns[x].size();++y)
+		{
+			cout << columns[x][y] << " ";
+		}
+		cout << endl;
+	}
 }
 
 template <typename T>
@@ -55,9 +96,9 @@ auto doPuzzle(PuzzleBoard<T> Board)
 
 	cout << "The size of the board is: " << Board.getSize() << endl;
 
+	cout << "The columns of the board are:" << endl;
 
-
-
+	createColumnCollection(Board);
 
 }
 int main()

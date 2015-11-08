@@ -17,6 +17,8 @@ void PuzzleBoard<T>::fillPuzzleBoard(const string & Filename)
 	{
 		vector<char> temp;
 
+		//use the move function since we are going to overwrite the 
+		//contents of the line variable each time we read a new line from the file
 		move(line.begin(), line.end(), back_inserter(temp));
 
 		board.emplace_back(temp);
@@ -46,4 +48,10 @@ template <typename T>
 int PuzzleBoard<T>::getSize() const
 {
 	return size;
+}
+
+template <typename T>
+vector<vector<T>> PuzzleBoard<T>::getBoard() const
+{
+	return board;
 }

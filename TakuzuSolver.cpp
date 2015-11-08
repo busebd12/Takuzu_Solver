@@ -7,33 +7,39 @@
 #include "PuzzleBoard.h"
 using namespace std;
 
-auto doCheckRowForRuleViolations()
+template <typename T>
+auto checkRowForRuleViolations(vector<T> & Row)
 {
 	
 }
 
-auto doCheckColumnForRuleViolations()
+template <typename T>
+auto checkColumnForRuleViolations(vector<T> & Column)
 {
 	
 }
 
-auto doCheckPuzzleForRuleViolations()
+template <typename T>
+auto checkPuzzleForRuleViolations(PuzzleBoard<T> & Board)
 {
 
 }
 
-auto doCreateRowCollection()
+template <typename T>
+auto createRowCollection(PuzzleBoard<T> Board)
 {
 	
 }
 
-auto doCreateColumnCollection()
+template <typename T>
+auto createColumnCollection(PuzzleBoard<T> Board)
 {
 	
 	
 }
 
-auto doPuzzle()
+template <typename T>
+auto doPuzzle(PuzzleBoard<T> Board)
 {
 	/*
 	Rules for the logic puzzle:
@@ -47,7 +53,7 @@ auto doPuzzle()
 
 	int numberOfOnes=0;
 
-	//cout << "The size of the board is: " << BoardSize << endl;
+	cout << "The size of the board is: " << Board.getSize() << endl;
 
 
 
@@ -61,4 +67,6 @@ int main()
 	puzzleBoard.fillPuzzleBoard("./input.txt");
 
 	puzzleBoard.print();
+
+	doPuzzle(puzzleBoard);
 }

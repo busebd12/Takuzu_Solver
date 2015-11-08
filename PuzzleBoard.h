@@ -19,7 +19,6 @@ class PuzzleBoard
 		void fillPuzzleBoard(const std::string & Filename);
 		void print() const;
 		int getSize() const;
-		void dontCallThisFunction();
 };
 
 //include the implementation file to avoid linker errors associated with templated classes

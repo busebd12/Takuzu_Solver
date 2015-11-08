@@ -20,6 +20,8 @@ void PuzzleBoard<T>::fillPuzzleBoard(const string & Filename)
 		move(line.begin(), line.end(), back_inserter(temp));
 
 		board.emplace_back(temp);
+
+		size+=temp.size();
 	}
 }
 
@@ -43,12 +45,5 @@ void PuzzleBoard<T>::print() const
 template <typename T>
 int PuzzleBoard<T>::getSize() const
 {
-	int i;
-
-	for(i=0;i<board.size();++i)
-	{
-		size+=board[i].size();
-	}
-
 	return size;
 }
